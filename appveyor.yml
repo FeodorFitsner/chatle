@@ -5,10 +5,12 @@ environment:
   COVERALLS_REPO_TOKEN: N8let7JMgVAtYqyQvsrLhz0dT5zFml5om
   KOREBUILD_NPM_INSTALL_OPTIONS: --force
 build_script:
+- ps: Install-Product node 6
 - cmd: |
     npm --version
     npm install npm -g
     npm --version
+    node --version
     build.cmd --quiet --parallel verify
 test_script:
 - ps: >-
